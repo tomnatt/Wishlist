@@ -1,0 +1,25 @@
+#{extends 'main.html' /}
+#{set title:'Input Tag' /}
+
+<div class="box input">
+
+<h1>Input Tag</h1>
+
+#{form @Application.createTag() , id:'creationForm' , enctype:'multipart/form-data' }
+
+<ul>
+
+<li>
+    <label for="name">Name:</label>
+    <input id="name" name="name" type="text" />
+</li>
+
+<li class="submitControls">
+    <input type="submit" value="Add" />
+    <a href="/" class="cancel">Cancel</a>
+</li>
+
+</ul>
+#{/form}
+
+</div>

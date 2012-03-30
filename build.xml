@@ -1,0 +1,13 @@
+<project name="wishlist" default="buildapplicationconf" basedir=".">
+    <description>
+        simple example build file
+    </description>
+
+    <target name="buildapplicationconf">
+        <concat destfile="./conf/application.conf">
+            <fileset file="conf/application.conf.base" />
+            <fileset file="conf/live-database.conf" />
+        </concat>
+    </target>
+
+</project>

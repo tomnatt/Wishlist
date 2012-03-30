@@ -1,0 +1,8 @@
+# Example Production settings
+# ~~~~~~~
+%production.application.mode=prod
+%production.db.url=jdbc:mysql://localhost:3306/example
+%production.db.driver=com.mysql.jdbc.Driver
+%production.db.user=example
+%production.db.pass=examplepassword
+%production.jpa.ddl=update

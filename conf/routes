@@ -1,0 +1,29 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                       Application.index
+
+# edit an item - note that the ordering of these 2 is important
+GET     /item/{itemname}                         Application.itemForm
+# input a new item
+GET     /item                                    Application.itemForm
+
+# create a new item
+GET     /save                                 Application.saveItem
+
+# input a new tag
+GET     /addtag                                 Application.inputTag
+
+# create a new tag
+GET     /createtag                              Application.createTag
+
+# display all items with a given tag
+GET     /list/{tag}                              Application.listByTag
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}

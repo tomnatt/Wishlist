@@ -1,0 +1,12 @@
+Create live-database.conf (example file provided)
+
+Then run:
+ant buildapplicationconf
+
+This will combine application.conf.base and live-database.conf to create application.conf with some prod database details.
+
+Then:
+
+play run --%local 
+
+Or set the id to local

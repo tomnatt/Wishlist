@@ -1,0 +1,56 @@
+#{extends 'main.html' /}
+#{set title:'Input Item' /}
+
+<div class="page box input">
+
+<h1>Input Item</h1>
+
+#{form @Application.saveItem() , id:'creationForm' , enctype:'multipart/form-data' }
+
+<ul>
+
+<li>
+    <label for="name">Name:</label>
+    <input tabindex="1" id="name" name="name" type="text" value="#{if item != null }${item.fullname}#{/if}" />
+</li>
+
+<li>
+    <label for="url">URL:</label>
+    <input tabindex="2" id="url" name="url" type="text" value="#{if item != null }${item.url}#{/if}" />
+</li>
+
+<li>
+    <label for="tags">Tags:</label>
+    <input tabindex="3" type="text" name="tags" id="tags" value="#{if tagstring != null }${tagstring}#{/if}" />
+    <label for="tags" class="hint">comma separated list</label>
+    
+    <noscript>
+    Suggestions:
+    </noscript>
+    <ul class="taglist">
+        #{list items:tags, as:'tag'}
+            <li>${tag.name}</li>
+        #{/list}
+    </ul>
+
+</li>
+
+<li class="archive #{if item.archived}archived#{/if}">
+    <input type="checkbox" tabindex="4" accesskey="A" name="archived" id="archived" #{if item.archived}checked="checked"#{/if} />
+    <label for="archived">Archive</label>
+    #{if item.archived}<span class="datearchived">archived ${item.dateArchived.format('dd MMMM yyyy')} at ${item.dateArchived.format('HH:mm')}</span>#{/if}
+</li>
+
+<li class="submitControls">
+    <input type="submit" value="Save" />
+    <a href="/" class="cancel">Cancel</a>
+</li>
+
+</ul>
+#{/form}
+
+</div>
+<script src="@{'/public/javascripts/addtag.js'}" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+    $("#name").focus();
+</script>

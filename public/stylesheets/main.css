@@ -1,0 +1,196 @@
+body {
+    font-family: "Myriad Pro","Myriad Web","Apple Myriad","Adobe Myriad","Trebuchet MS",Trebuchet,sans-serif;
+    font-weight: normal;
+    background-color: black;
+}
+h1, h2 { 
+    color: white;
+}
+
+.box {
+    background-color: rgba(64, 64, 64, 0.698);
+    border-radius: 20px;
+    padding: 1px 20px;
+}
+
+.content {
+    margin: 50px auto 0;
+    width: 90%;
+}
+
+.attribution {
+    background-color: rgba(64, 64, 64, 0.698);
+    left: 0;
+    padding: 5px 0 7px;
+    position: absolute;
+    top: 95%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.attribution span {
+    color: rgb(209, 209, 198);
+    font-size: small;
+    margin: 2px 25px 2px 15px
+}
+.attribution span a {
+    color: rgb(209, 209, 198);
+}
+.attribution span a:hover {
+    color: white;
+}
+.attribution span span#toggleui {
+    margin: 0;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.box ul { 
+    margin: 0; 
+    padding: 0;
+}
+
+.box ul li {
+    background-color: rgba(209, 209, 198, 1);
+    list-style: none;
+    margin: 10px 0;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.box ul li a {
+    color: black;
+}
+.box ul li a:hover {
+    color: purple;
+}
+
+/* homepage */
+.content.homepage {
+    width: 60%;
+}
+.box.wishlist {
+    float: left;    
+    width: 65%;
+}
+.box .controls {
+    position: absolute;
+    top: 68px;
+    left: 53%;
+}
+.box .controls a {
+    clear: both;
+    float: right;
+    color: #D1D1C6;
+    font-size: small;
+}
+.box .controls a.showAll {
+    margin-top: 5px;
+}
+.box .controls a:hover {
+    color:white;
+}
+.edit {
+    font-size: small;
+    float: right;
+    margin-right: 20px;
+}
+.tags {
+    width: 15%;
+    float: right;
+}
+.box.tags ul {
+    margin: 15px 0;
+}
+.box.tags ul li {
+    background: transparent;
+    padding: 0;
+    text-align: center;
+}
+.box.tags ul li a {
+    color: rgb(209, 209, 198);
+    font-weight: bold;
+    font-size: 135%;
+    text-decoration: none;
+}
+.box.tags ul li a:hover {
+    color:white;
+}
+
+.box.wishlist ul, .box.listbytag ul {
+    margin: 0 0 20px; 
+}
+
+.archivedList {
+    margin-top: 15px;
+}
+
+
+/* input page */
+.box.input ul li {
+    padding: 10px 20px 15px;
+}
+.box.input ul li.archive {
+    padding: 5px 20px;
+}
+
+.box label {
+    display: block;
+}
+.box .archive label, .box .archive .datearchived {
+    display: inline;
+    font-size: small;
+    position: relative;
+    top: -2px;
+}
+.box .archive .datearchived {
+    float: right;
+    top: 2px;
+}
+.box label .label {
+    width: 100px;
+}
+.box input[type="text"] {
+    width: 98%;
+}
+.box input[type="submit"] {
+    width: 50px;
+}
+.hint {
+    font-size: small;
+    margin-bottom: 10px;
+}
+.box ul li .taglist li {
+    font-size: small;
+    display: inline;
+    padding: 0;
+    background-color: transparent;
+    margin: 5px 5px 2px 5px;    
+}
+
+.box ul li.submitControls {
+    background-color: transparent;
+    list-style: none;
+    margin: 10px 0;
+    padding: 10px 20px;
+}
+.box ul li.submitControls .cancel {
+    font-size: small;
+    color: rgb(209, 209, 198);
+    float: right;
+}
+.box ul li.submitControls .cancel:hover {
+    color:white;
+}
+.box.input, .box.listbytag {
+    margin: 50px auto 0;
+    width: 40%;
+}
+.box ul li.archived {
+    background-color: #FF6666;
+}
+
+
+/* listing page */
+.listbytag .controls {
+    left: 60% !important;
+}
