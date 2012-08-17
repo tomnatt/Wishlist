@@ -13,6 +13,13 @@ import util.Util;
 
 public class Application extends Controller {
 
+    @Before(unless={"testData"})
+    static void checkAuthenticated() {
+        if (!session.contains("user")) {
+            Security.login();
+        }
+    }
+
     public static void index(String all) {
         
         List<Item> items = Item.findActive();

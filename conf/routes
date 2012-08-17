@@ -11,19 +11,26 @@ GET     /item/{itemname}                         Application.itemForm
 GET     /item                                    Application.itemForm
 
 # create a new item
-GET     /save                                 Application.saveItem
+GET     /save                                    Application.saveItem
 
 # input a new tag
-GET     /addtag                                 Application.inputTag
+GET     /addtag                                  Application.inputTag
 
 # create a new tag
-GET     /createtag                              Application.createTag
+GET     /createtag                               Application.createTag
 
 # display all items with a given tag
 GET     /list/{tag}                              Application.listByTag
 
+# users
+GET     /newuser                                 NewUser.newUser
+
+# authentication
+GET     /login                                   Security.login
+*       /authenticate                            Security.authenticate
+
 # Map static resources from the /app/public folder to the /public path
-GET     /public/                                staticDir:public
+GET     /public/                                 staticDir:public
 
 # Catch all
-*       /{controller}/{action}                  {controller}.{action}
+*       /{controller}/{action}                   {controller}.{action}

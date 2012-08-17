@@ -1,6 +1,10 @@
-TODO:
+AUTHENTICATION
+authenticate at all
+data is owned by a user
 
-authentication
+login screen: new user link
+new user:
+openid login form -> security.newuser -> NewUser.captureName -> Application.index
 
 UI
 create item screen with edit functions
