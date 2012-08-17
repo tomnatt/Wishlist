@@ -2,10 +2,10 @@
 #{set title:'Home' /}
 
 #{if flash.error}
-<h1>Authentication failed. Are you a <a href="@{NewUser.newUser()}">new user</a>?</h1>
+<h1>Authentication failed. Are you a <a href="@{Login.newUser()}">new user</a>?</h1>
 #{/if}
  
-<form action="@{Security.authenticate()}" method="POST">
+<form action="@{Login.authenticate()}" method="POST">
     <label for="user">What's your OpenID?</label>
     <input size="100" type="text" name="user" id="user" value="https://www.google.com/accounts/o8/id" />
     <input type="submit" value="login..." />

@@ -46,16 +46,15 @@ public class Login extends Controller {
 
     public static void newUserAuthenticate(String user) {
 
-        // TODO something different to this
-
         if (OpenID.isAuthenticationResponse()) {
 
             UserInfo verifiedUser = OpenID.getVerifiedID();
 
-            if (User.findByUserID(verifiedUser.id) == null) {
-                // user doesn't exist, fail auth
-                verifiedUser = null;
-            }
+            // create new user
+            User u = new User(verifiedUser.id);
+            u.save();
+
+            // TODO make this work and go in the right direction
 
             if (verifiedUser == null) {
                 flash.put("error", "failed");

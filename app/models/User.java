@@ -19,6 +19,12 @@ public class User extends Model {
     //@ManyToMany(mappedBy="tags")
     //public List<Item> items;
 
+    // convenience
+    public User(String userid) {
+        this.userid = userid;
+        this.name = "";
+    }
+
     public static User findByUserID(String userid) {
 
         List<User> users = User.find("byUserid", userid).fetch();
