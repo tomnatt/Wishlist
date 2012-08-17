@@ -1,5 +1,5 @@
 body {
-    font-family: "Myriad Pro","Myriad Web","Apple Myriad","Adobe Myriad","Trebuchet MS",Trebuchet,sans-serif;
+    font-family: sans-serif;
     font-weight: normal;
     background-color: black;
 }
@@ -109,7 +109,7 @@ h1, h2 {
 .box.tags ul li a {
     color: rgb(209, 209, 198);
     font-weight: bold;
-    font-size: 135%;
+    font-size: 100%;
     text-decoration: none;
 }
 .box.tags ul li a:hover {
