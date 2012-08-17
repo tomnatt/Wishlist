@@ -196,6 +196,6 @@ db=mem
 
 # local settings
 # ~~~~~~~
-#%local.application.mode=dev
-#%local.db = mem
+%local.application.mode=dev
+%local.db = mem
 
