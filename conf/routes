@@ -22,12 +22,11 @@ GET     /createtag                               Application.createTag
 # display all items with a given tag
 GET     /list/{tag}                              Application.listByTag
 
-# users
-GET     /newuser                                 NewUser.newUser
-
 # authentication
-GET     /login                                   Security.login
-*       /authenticate                            Security.authenticate
+GET     /login                                   Login.login
+*       /authenticate                            Login.authenticate
+GET     /newuser                                 Login.newUser
+*       /newuserauthenticate                     Login.newUserAuthenticate
 
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                 staticDir:public
