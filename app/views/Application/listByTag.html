@@ -21,12 +21,7 @@
 #{list items:items, as:'i'}
 
     <li>
-        #{if i.url != null }
-            <a href="${i.url}">${i.fullname}</a>
-        #{/if}
-        #{else}
-            ${i.fullname}
-        #{/else}
+        <a href="@{Application.itemForm(i.name)}">${i.fullname}</a>
     </li>
     
 #{/list}
@@ -43,12 +38,7 @@
 #{list items:archivedItems, as:'i'}
 
     <li class="archived">
-        #{if i.url != null }
-            <a href="${i.url}">${i.fullname}</a> <a href="@{Application.itemForm(i.name)}" class="edit">edit</a>
-        #{/if}
-        #{else}
-            ${i.fullname}
-        #{/else}
+        <a href="@{Application.itemForm(i.name)}">${i.fullname}</a>
     </li>
     
 #{/list}
