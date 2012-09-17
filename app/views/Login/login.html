@@ -1,8 +1,10 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
+<div class="page box input">
+
 #{if flash.error}
-<h1>Authentication failed. Are you a <a href="@{Login.newUser()}">new user</a>?</h1>
+<h1>Authentication failed.</h1>
 #{/if}
  
 <form action="@{Login.authenticate()}" method="POST">
@@ -10,3 +12,5 @@
     <input size="100" type="text" name="user" id="user" value="https://www.google.com/accounts/o8/id" />
     <input type="submit" value="login..." />
 </form>
+
+</div>
