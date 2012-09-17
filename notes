@@ -1,11 +1,13 @@
 AUTHENTICATION
-authenticate at all
+authenticate at all (/)
 data is owned by a user
 
 login screen: new user link
-new user:
-openid login form -> security.newuser -> Login.captureName -> Application.index
-(half done ... ish)
+pages: logout
+
+new user screen:
+openid login form -> login.newuser -> Login.captureName -> Application.index
+code is horrible but this works
 
 UI
 create item screen with edit functions

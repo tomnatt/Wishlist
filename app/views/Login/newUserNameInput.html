@@ -1,0 +1,10 @@
+#{extends 'main.html' /}
+#{set title:'New User Name' /}
+
+<h1>New User Name</h1>
+
+<form action="@{Login.newUserNameSave()}" method="POST">
+    <label for="name">What's your name?</label>
+    <input size="100" type="text" name="name" id="name" value="Tom" />
+    <input type="submit" value="Go" />
+</form>

@@ -16,7 +16,7 @@ public class Application extends Controller {
     @Before(unless={"testData"})
     static void checkAuthenticated() {
         if (!session.contains("user")) {
-            Security.login();
+            Login.login();
         }
     }
 
@@ -26,12 +26,14 @@ public class Application extends Controller {
         List<Item> archivedItems = null;
         List<Tag> tags = Tag.findAll();
         
+        User user = User.findByUserID(session.get("user"));
+        
         if (!StringUtils.isEmpty(all)) {
             // get the archived items if requested
             archivedItems = Item.findArchived();
         }
 
-        render(items, archivedItems, tags);
+        render(user, items, archivedItems, tags);
     }
     
     public static void testData() {

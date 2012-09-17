@@ -54,18 +54,41 @@ public class Login extends Controller {
             User u = new User(verifiedUser.id);
             u.save();
 
-            // TODO make this work and go in the right direction
-
             if (verifiedUser == null) {
                 flash.put("error", "failed");
                 login();
             }
             session.put("user", verifiedUser.id);
-            Application.index(null);
+            newUserNameInput();
 
         } else {
             OpenID.id(user).verify(); // will redirect the user
         }
+    }
+    
+    public static void newUserNameInput() {
+        
+        if (session.contains("user")) {
+            render();
+        } else {
+            login();
+        }
+        
+    }
+    
+    public static void newUserNameSave(String name) {
+        
+        if (session.contains("user")) {
+            User u = User.findByUserID(session.get("user"));
+            u.name = name;
+            u.save();
+            
+            Application.index(null);
+            
+        } else {
+            login();
+        }
+        
     }
 
 }
