@@ -16,21 +16,17 @@ public class Login extends Controller {
     }
 
     public static void authenticate(String user) {
-
+        
         if (OpenID.isAuthenticationResponse()) {
 
             UserInfo verifiedUser = OpenID.getVerifiedID();
-
-            if (User.findByUserID(verifiedUser.id) == null) {
-                // user doesn't exist, fail auth
-                verifiedUser = null;
-            }
-
-            if (verifiedUser == null) {
-                flash.put("error", "failed");
-                login();
-            }
             session.put("user", verifiedUser.id);
+            
+            if (User.findByUserID(verifiedUser.id) == null) {
+                // if user doesn't exist, send them off to create an account
+                newUserNameInput();
+            }
+
             Application.index(null);
 
         } else {
@@ -40,32 +36,6 @@ public class Login extends Controller {
 
     // new user
 
-    public static void newUser() {
-        render();
-    }
-
-    public static void newUserAuthenticate(String user) {
-
-        if (OpenID.isAuthenticationResponse()) {
-
-            UserInfo verifiedUser = OpenID.getVerifiedID();
-
-            // create new user
-            User u = new User(verifiedUser.id);
-            u.save();
-
-            if (verifiedUser == null) {
-                flash.put("error", "failed");
-                login();
-            }
-            session.put("user", verifiedUser.id);
-            newUserNameInput();
-
-        } else {
-            OpenID.id(user).verify(); // will redirect the user
-        }
-    }
-    
     public static void newUserNameInput() {
         
         if (session.contains("user")) {
@@ -79,7 +49,7 @@ public class Login extends Controller {
     public static void newUserNameSave(String name) {
         
         if (session.contains("user")) {
-            User u = User.findByUserID(session.get("user"));
+            User u = new User(session.get("user"));
             u.name = name;
             u.save();
             
